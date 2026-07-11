@@ -1,0 +1,4 @@
+const p=[['Ayam',3000,5000],['Bakpao',3000,5000],['Mochi',2000,5000],['Puding',2500,5000],['Dimsum',3000,5000]];
+const tb=document.getElementById('tb');
+p.forEach((x,i)=>tb.innerHTML+=`<tr><td>${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td><td><input id='q${i}' type='number' value='0'></td></tr>`);
+function hitung(){let omzet=0,modal=0;p.forEach((x,i)=>{let q=+document.getElementById('q'+i).value;omzet+=q*x[2];modal+=q*x[1];});let k=omzet-modal;document.getElementById('hasil').innerHTML=`Omzet: Rp${omzet.toLocaleString('id-ID')}<br>Modal: Rp${modal.toLocaleString('id-ID')}<br>Keuntungan Kotor: Rp${k.toLocaleString('id-ID')}<br>Keuntungan Bersih: isi setelah kurangi biaya lain`; }
